@@ -49,16 +49,22 @@ public class Alumno {
     }
 
     public void modificarNota(int posicion, double nnota)
-            throws RangoException, PosicionArrayException 
-    {
-        if (posicion > 5){
+            throws RangoException, PosicionArrayException {
+        if (posicion > 5) {
             throw new PosicionArrayException("");
         }
-        if (nnota > 10){
+        if (nnota > 10) {
             throw new RangoException("");
-        }
-        else{
+        } else {
             notas.add(posicion, nnota);
+        }
+    }
+
+    public void imprimirCalificaciones() {
+        System.out.println("Nombre del alumno: " + nombre);
+        for (int i = 0; i < notas.size(); i++) 
+        {
+            System.out.println(notas.get(i));
         }
     }
 
